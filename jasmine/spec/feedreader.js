@@ -27,6 +27,7 @@ $(function() {
         it('link is not empty', function (){
             allFeeds.forEach(feed => {
                 expect(feed.url).toBeDefined();
+                expect(feed.url.length).not.toBe(0)
             })
         }) 
 
@@ -35,6 +36,7 @@ $(function() {
         it('name is not empty', function() {
             allFeeds.forEach(feed => {
                 expect(feed.name).toBeDefined();
+                expect(feed.name.length).not.toBe(0)
             })
         })
     });
