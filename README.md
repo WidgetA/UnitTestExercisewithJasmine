@@ -1,5 +1,6 @@
 # Feed Reader Test
 ## Pre-works
+Please enter the root of this project, and execute:
 `npm install -save-dev express`  
 `npm install -g jasmine`  
 `npm install jasmine-spec-reporter --save-dev`  
