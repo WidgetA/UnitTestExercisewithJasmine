@@ -86,22 +86,23 @@ $(function() {
     });
 
     /* TODO: 写一个叫做 "New Feed Selection" 的测试用例 */
-    describe('New Feed Selection', function(done) {
+    describe('New Feed Selection', function() {
         /* TODO:
          * 写一个测试保证当用 loadFeed 函数加载一个新源的时候内容会真的改变。
          * 记住，loadFeed() 函数是异步的。
          */
         let FeedSelection_0;
+        let FeedSelection_1;
         beforeEach(function(done) {
-            loadFeed(0, function() {
+            loadFeed(1, function() {
                 FeedSelection_0 = document.querySelector(".feed").innerHTML;
-                loadFeed(1, function() {
-                    done();
+                loadFeed(0, function() {
+                FeedSelection_1 = document.querySelector(".feed").innerHTML;
+                done();
                 });
             });
-        });
+        }, 15000); // it is too slow to connect this 2 website in my computer
         it("changes its loaded content", function(done) {
-            let FeedSelection_1 = document.querySelector(".feed").innerHTML;
             expect(FeedSelection_0).not.toBe(FeedSelection_1);
             done();
         });
